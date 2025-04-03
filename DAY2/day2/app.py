@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from .middleware import TokenAuthMiddleware
 
 app = FastAPI()
 
@@ -15,6 +16,8 @@ valid_token  = "567ss7qw8VHVHvhjhvHVNVjj785dVjhvjhj67GhhEYnjfds"
 
 valid_username = "shuvam@gmail.com"
 valid_password = "12345@Aa"
+
+app.add_middleware(TokenAuthMiddleware, valid_token=valid_token)
 
 @app.post("/user")
 async def check_user(user_data: User):

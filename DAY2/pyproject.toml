@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 fastapi = "^0.115.12"
 uvicorn = "^0.34.0"
+middleware = "^1.2.3"
 
 
 [build-system]
